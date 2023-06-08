@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 
 const jsonTypicode = "https://jsonplaceholder.typicode.com/todos/1";
 
-const api = "https://dummyapi.io/data/v1//tag";
+const api = "https://dummyapi.io/data/v1/user";
 
 const fetchData = async (url) => {
   try {
@@ -12,8 +12,10 @@ const fetchData = async (url) => {
         "app-id": "6481b9d0850b8312cb83fddf",
       },
     });
-    const data = await response.json();
-    console.log(data);
+    const result = await response.json();
+    result.data.map((user) =>
+      console.log(`User: ${user.firstName} ${user.lastName}`)
+    );
   } catch {
     (error) => console.log(error);
   }
