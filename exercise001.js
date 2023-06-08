@@ -8,7 +8,6 @@ const promise = new Promise((resolve, reject) => {
   } else {
     // Failure
     setTimeout(() => reject("error"), 2000);
-    console.log();
   }
 });
 
